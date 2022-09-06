@@ -13,4 +13,12 @@ LT: '<';
 NOTEQUAL: '<>';
 DIGIT: [0-9]+;
 SPACE: ' '+;
+//	; | : | . | , | ( | )
+SEMICOLON: ';';
+COLON: ':';
+DOT: '.';
+
+
+
+
 
