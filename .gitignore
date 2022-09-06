@@ -1,0 +1,5 @@
+./gen
+./out
+./src/CompilerOutputLexer/Lexar.java
+./src/CompilerOutputLexer/Lexar.interp
+./src/CompilerOutputLexer/Lexar.tokens
