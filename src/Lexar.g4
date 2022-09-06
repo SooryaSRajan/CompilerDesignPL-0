@@ -43,8 +43,8 @@ SEMICOLON: ';';
 COLON: ':';
 DOT: '.';
 COMMA: ',';
-LBRACKET: '(';
-RBRACKET: ')';
+BRACKET_OPEN: '(';
+BRACKET_CLOSE: ')';
 
 //spaces and non-graphical characters
 WS: ('\n'|'\t'|' ') -> skip;
