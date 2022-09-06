@@ -1,5 +1,9 @@
 lexer grammar Lexar;
 
+//TODO: Add return, for-loop, break regex and booleans. Maybe add while loops, extneded PL/0 support for _ in ID, include maybe
+//TODO: Add regex for comments
+//TODO: Look into: https://courses.cs.washington.edu/courses/cse401/02sp/pl0/proj.html for extra information pertaining to extended keywords
+
 //keywords
 MODULE: 'module';
 PROCEDURE: 'procedure';
