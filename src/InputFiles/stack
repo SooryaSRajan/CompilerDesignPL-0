@@ -5,9 +5,12 @@ module main;
 
     procedure push(value:int);
     begin
-        if position >= 0 then
+        if position >= 0 and position <= 100 then
             position := position + 1;
             stack[position] := value;
+            [else
+                output := "Stack pointer not in range"
+            ]
         end;
     end push;
 
