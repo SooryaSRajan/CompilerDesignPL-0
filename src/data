@@ -1,4 +1,15 @@
 module main;
+
+#THIS IS A SINGLE LINE COMMENT WITH RANDOM CHARACTERS 1283t128o7t3eo7i!(@*&^B#ET!@o
+
+##This is a multi line comment
+Line One
+Line Two
+Line Three
+Close
+##
+
+    #The below implementation is of an array
     var result:int;
     var a:array [10] of int;
     var b:array [25] of array [100] of bool;

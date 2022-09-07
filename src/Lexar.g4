@@ -4,6 +4,9 @@ lexer grammar Lexar;
 //TODO: Add regex for comments
 //TODO: Look into: https://courses.cs.washington.edu/courses/cse401/02sp/pl0/proj.html for extra information pertaining to extended keywords
 
+//Spaces and non-graphical characters
+WS: ('\n'|'\t'|' ') -> skip;
+
 //keywords
 MODULE: 'module';
 PROCEDURE: 'procedure';
@@ -15,10 +18,23 @@ INT: 'int';
 IF: 'if';
 THEN: 'then';
 ELSE: 'else';
-WHILE: 'while';
 INPUT: 'input';
 OUTPUT: 'output';
 ODD: 'odd';
+RETURN: 'return';
+
+//Booleans
+BOOLEAN: 'bool';
+TRUE: 'true';
+FALSE: 'false';
+
+//Boolean operators
+OR: 'or';
+AND: 'and';
+
+//Loops, we'll stick with while loops alone
+WHILE: 'while';
+DO: 'do';
 
 //Extended tokens for arrays
 ARRAY: 'array';
@@ -50,8 +66,14 @@ COMMA: ',';
 BRACKET_OPEN: '(';
 BRACKET_CLOSE: ')';
 
-//spaces and non-graphical characters
-WS: ('\n'|'\t'|' ') -> skip;
+//Comment
+COMMENT: ('#'([a-zA-Z0-9_ ]|~[a-zA-Z0-9\n])*) -> skip;
+COMMENT_MULTILINE: ('##'([a-zA-Z0-9_ ]|~[a-zA-Z0-9])*'##') -> skip;
+
+//String
+STRING: ('"'([a-zA-Z0-9_ ]|~[a-zA-Z0-9])*'"');
+
+
 
 
 
