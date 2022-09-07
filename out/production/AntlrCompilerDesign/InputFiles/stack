@@ -1,0 +1,67 @@
+module main;
+
+    var stack:array [100] of int;
+    var __this_is_position__lol_:int;
+
+    procedure push(value:int);
+    begin
+        if position >= 0 then
+            position := position + 1;
+            stack[position] := value;
+        end;
+    end push;
+
+    procedure pop();
+    begin
+        if position >= 0 then
+            position := position - 1;
+            return stack[position + 1];
+            [else
+                output := "Stack Underflow";
+            ]
+        end;
+    end pop;
+
+    procedure top();
+    begin
+        if position >= 0 then
+            return stack[position];
+            [else
+                output := "Stack Underflow";
+            ]
+        end;
+    end top;
+
+begin
+
+    #0 - push, 1 - pop, 2 - top, 3 - exit
+
+    position := -1;
+    var n:int;
+    n := input;
+
+    while n <> 3 do
+	    if n = 0 then
+	        var value:int;
+	        value := input;
+	        push(value);
+	        [else
+                if n = 1 then
+                    output := pop();
+                    [else
+                        if n = 2 then
+                            output := top();
+                            [else
+                                output := "Invalid Value Entered";
+                            ]
+                        end;
+                    ]
+                end;
+
+	        ]
+	    end;
+	    n := input;
+    end;
+
+
+end main;

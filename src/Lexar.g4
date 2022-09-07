@@ -1,9 +1,5 @@
 lexer grammar Lexar;
 
-//TODO: Add return, for-loop, break regex and booleans. Maybe add while loops, extneded PL/0 support for _ in ID, include maybe
-//TODO: Add regex for comments
-//TODO: Look into: https://courses.cs.washington.edu/courses/cse401/02sp/pl0/proj.html for extra information pertaining to extended keywords
-
 //Spaces and non-graphical characters
 WS: ('\n'|'\t'|' ') -> skip;
 
@@ -39,10 +35,8 @@ DO: 'do';
 //Extended tokens for arrays
 ARRAY: 'array';
 OF: 'of';
-ARR_OPEN: '[';
-ARR_CLOSE: ']';
 
-ID: ([a-zA-Z][a-zA-Z0-9]*);
+ID: ([a-zA-Z_][a-zA-Z0-9_]*);
 INTEGER: [0]|[1-9]+[0-9]*;
 
 //operators
@@ -65,13 +59,15 @@ DOT: '.';
 COMMA: ',';
 BRACKET_OPEN: '(';
 BRACKET_CLOSE: ')';
+SQ_OPEN: '[';
+SQ_CLOSE: ']';
 
 //Comment
 COMMENT: ('#'([a-zA-Z0-9_ ]|~[a-zA-Z0-9\n])*) -> skip;
 COMMENT_MULTILINE: ('##'([a-zA-Z0-9_ ]|~[a-zA-Z0-9])*'##') -> skip;
 
 //String
-STRING: ('"'([a-zA-Z0-9_ ]|~[a-zA-Z0-9])*'"');
+STRING: ('"'([a-zA-Z0-9_ ]|~[a-zA-Z0-9\n])*'"');
 
 
 
