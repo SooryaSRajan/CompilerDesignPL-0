@@ -1,2 +1,4 @@
-./gen
-./out
+/gen
+/out
+/.idea
+/.idea/misc.xml
