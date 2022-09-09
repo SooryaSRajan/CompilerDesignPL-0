@@ -9,7 +9,7 @@ module main;
             position := position + 1;
             stack[position] := value;
             [else
-                output := "Stack pointer not in range"
+                output := "Stack pointer not in range";
             ]
         end;
     end push;
