@@ -7,7 +7,7 @@ public class Main {
 
     public static void main(String[] args) {
         try {
-            CharStream input = new ANTLRFileStream("/Users/sooryasrajan/AntlrCompilerDesign/src/InputFiles/stack");
+            CharStream input = new ANTLRFileStream("/Users/sooryasrajan/AntlrCompilerDesign/src/InputFiles/odd_numbers");
             /* give your filepath in the above place*/
             Lexar lexer = new Lexar(input);
             String[] ruleNames = lexer.getRuleNames();
