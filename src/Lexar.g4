@@ -3,6 +3,8 @@ lexer grammar Lexar;
 //Spaces and non-graphical characters
 WS: ('\n'|'\t'|' ') -> skip;
 
+//for <id> := for <expr-1> to <expr-2> do <stmt list> end
+
 //keywords
 MODULE: 'module';
 PROCEDURE: 'procedure';
@@ -27,10 +29,15 @@ FALSE: 'false';
 //Boolean operators
 OR: 'or';
 AND: 'and';
+NOT: 'not';
 
-//Loops, we'll stick with while loops alone
+//While loop
 WHILE: 'while';
 DO: 'do';
+
+//For Loop
+FOR: 'for';
+TO: 'to';
 
 //Extended tokens for arrays
 ARRAY: 'array';
