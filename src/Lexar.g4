@@ -3,8 +3,6 @@ lexer grammar Lexar;
 //Spaces and non-graphical characters
 WS: ('\n'|'\t'|' ') -> skip;
 
-//for <id> := for <expr-1> to <expr-2> do <stmt list> end
-
 //keywords
 MODULE: 'module';
 PROCEDURE: 'procedure';
