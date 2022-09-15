@@ -11,6 +11,8 @@ END: 'end';
 CONST: 'const';
 VAR: 'var';
 INT: 'int';
+CHAR: 'char';
+BOOLEAN: 'bool';
 IF: 'if';
 THEN: 'then';
 ELSE: 'else';
@@ -20,7 +22,6 @@ ODD: 'odd';
 RETURN: 'return';
 
 //Booleans
-BOOLEAN: 'bool';
 TRUE: 'true';
 FALSE: 'false';
 
@@ -44,7 +45,6 @@ OF: 'of';
 //Variables and values
 ID: ([a-zA-Z_][a-zA-Z0-9_]*);
 INTEGER: [0]|[1-9]+[0-9]*;
-CHAR: 'char';
 CHARACTER: ('\''([a-zA-Z0-9_ ]|~[a-zA-Z0-9\n])'\'');
 
 //operators
