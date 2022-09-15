@@ -24,10 +24,6 @@ BOOLEAN: 'bool';
 TRUE: 'true';
 FALSE: 'false';
 
-//Char
-CHAR: 'char';
-CHARACTER: ('\''([a-zA-Z0-9_ ]|~[a-zA-Z0-9\n])'\'');
-
 //Boolean operators
 OR: 'or';
 AND: 'and';
@@ -45,8 +41,11 @@ TO: 'to';
 ARRAY: 'array';
 OF: 'of';
 
+//Variables and values
 ID: ([a-zA-Z_][a-zA-Z0-9_]*);
 INTEGER: [0]|[1-9]+[0-9]*;
+CHAR: 'char';
+CHARACTER: ('\''([a-zA-Z0-9_ ]|~[a-zA-Z0-9\n])'\'');
 
 //operators
 PLUS: '+';
