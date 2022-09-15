@@ -24,6 +24,10 @@ BOOLEAN: 'bool';
 TRUE: 'true';
 FALSE: 'false';
 
+//Char
+CHAR: 'char';
+CHARACTER: ('\''([a-zA-Z0-9_ ]|~[a-zA-Z0-9\n])'\'');
+
 //Boolean operators
 OR: 'or';
 AND: 'and';
