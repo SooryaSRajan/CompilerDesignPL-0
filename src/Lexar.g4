@@ -6,6 +6,7 @@ WS: ('\n'|'\t'|' ') -> skip;
 //keywords
 MODULE: 'module';
 PROCEDURE: 'procedure';
+MAIN: 'main';
 BEGIN: 'begin';
 END: 'end';
 CONST: 'const';
