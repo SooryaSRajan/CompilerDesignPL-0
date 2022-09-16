@@ -6,8 +6,9 @@ import org.antlr.v4.runtime.Token;
 public class Main {
 
     public static void main(String[] args) {
+
         try {
-            CharStream input = new ANTLRFileStream("/Users/sooryasrajan/AntlrCompilerDesign/src/InputFiles/multiplication");
+            CharStream input = new ANTLRFileStream("/Users/sooryasrajan/AntlrCompilerDesign/src/InputFiles/fibonacci");
             /* give your filepath in the above place*/
             Lexar lexer = new Lexar(input);
             String[] ruleNames = lexer.getRuleNames();

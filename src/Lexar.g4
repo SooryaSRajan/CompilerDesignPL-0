@@ -70,7 +70,7 @@ BRACKET_CLOSE: ')';
 SQ_OPEN: '[';
 SQ_CLOSE: ']';
 
-//Comment
+//Comments
 COMMENT: ('#'([a-zA-Z0-9_ ]|~[a-zA-Z0-9\n])*) -> skip;
 COMMENT_MULTILINE: ('##'([a-zA-Z0-9_ ]|~[a-zA-Z0-9])*'##') -> skip;
 
