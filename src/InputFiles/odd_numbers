@@ -31,4 +31,4 @@ begin
     output := "Sum of all odd numbers: ";
     output := sum;
 
-end main;
+end main.

@@ -1,4 +1,53 @@
-lexer grammar Lexar;
+grammar Lexar;
+
+start : program;
+program : MODULE MAIN SEMICOLON block MAIN DOT;
+block : declList BEGIN stmtList END;
+declList : (decl SEMICOLON)*;
+decl : constDecl
+    | varDecl
+    | procDecl;
+constDecl : CONST constDeclItem (COMMA constDeclItem)*;
+constDeclItem : ID COLON type EQUAL constExpr;
+constExpr : ID
+    | INT;
+varDecl : VAR varDeclItem (COMMA varDeclItem)*;
+varDeclItem : ID COLON type;
+procDecl : PROCEDURE ID BRACKET_OPEN (formalDecl (COMMA formalDecl)*)? BRACKET_CLOSE SEMICOLON block ID;
+formalDecl : ID COLON type;
+type : INT
+    | CHAR;
+stmtList : ((decl SEMICOLON)+ | (stmt SEMICOLON)+)*;
+stmt : callStmt
+    | assignStmt
+    | outStmt
+    | ifStmt
+    | whileStmt;
+callStmt : ID BRACKET_OPEN (exprs)? BRACKET_CLOSE;
+assignStmt : lvalue ASSIGNMENT expr;
+lvalue : ID;
+outStmt : OUTPUT ASSIGNMENT expr;
+ifStmt : IF test THEN stmtList END;
+whileStmt : WHILE test DO stmtList END;
+test : ODD sum
+    | sum relop sum;
+relop : LT
+    | LTE
+    | EQUAL
+    | GTE
+    | GT
+    | NOTEQUAL;
+exprs : expr (COMMA expr)*;
+expr : sum;
+sum : term ((PLUS|MINUS) term)*;
+term : factor ((MULTIPLICATION|DIVISION) factor)*;
+factor : MINUS factor
+    | lvalue
+    | INT
+    | INPUT
+    | BRACKET_OPEN expr BRACKET_CLOSE;
+
+
 
 //Spaces and non-graphical characters
 WS: ('\n'|'\t'|' ') -> skip;

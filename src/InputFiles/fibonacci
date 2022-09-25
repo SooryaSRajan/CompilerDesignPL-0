@@ -35,4 +35,4 @@ begin
         n := input;
     end;
 
-end main;
+end main.

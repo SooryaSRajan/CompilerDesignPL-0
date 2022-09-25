@@ -15,4 +15,4 @@ begin
 
     output := result;
 
-end main;
+end main.
