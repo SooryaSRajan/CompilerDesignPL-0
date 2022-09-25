@@ -10,7 +10,8 @@ decl : constDecl
 constDecl : CONST constDeclItem (COMMA constDeclItem)*;
 constDeclItem : ID COLON type EQUAL constExpr;
 constExpr : ID
-    | INT;
+    | INTEGER
+    | CHARACTER;
 varDecl : VAR varDeclItem (COMMA varDeclItem)*;
 varDeclItem : ID COLON type;
 procDecl : PROCEDURE ID BRACKET_OPEN (formalDecl (COMMA formalDecl)*)? BRACKET_CLOSE SEMICOLON block ID;
@@ -22,13 +23,15 @@ stmt : callStmt
     | assignStmt
     | outStmt
     | ifStmt
-    | whileStmt;
+    | whileStmt
+    | forStmt;
 callStmt : ID BRACKET_OPEN (exprs)? BRACKET_CLOSE;
 assignStmt : lvalue ASSIGNMENT expr;
 lvalue : ID;
-outStmt : OUTPUT ASSIGNMENT expr;
+outStmt : OUTPUT ASSIGNMENT expr|STRING;
 ifStmt : IF test THEN stmtList END;
 whileStmt : WHILE test DO stmtList END;
+forStmt : FOR (ID | INTEGER) TO (ID | INTEGER) DO stmtList END;
 test : ODD sum
     | sum relop sum;
 relop : LT
@@ -38,19 +41,18 @@ relop : LT
     | GT
     | NOTEQUAL;
 exprs : expr (COMMA expr)*;
-expr : sum;
-sum : term ((PLUS|MINUS) term)*;
-term : factor ((MULTIPLICATION|DIVISION) factor)*;
+expr : sum
+    | CHARACTER;
+sum : term ((PLUS | MINUS) term)*;
+term : factor ((MULTIPLICATION | DIVISION) factor)*;
 factor : MINUS factor
     | lvalue
-    | INT
+    | INTEGER
     | INPUT
     | BRACKET_OPEN expr BRACKET_CLOSE;
 
-
-
 //Spaces and non-graphical characters
-WS: ('\n'|'\t'|' ') -> skip;
+WS: ('\n' | '\t' | ' ') -> skip;
 
 //keywords
 MODULE: 'module';
