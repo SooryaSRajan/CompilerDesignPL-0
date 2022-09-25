@@ -28,7 +28,7 @@ stmt : callStmt
 callStmt : ID BRACKET_OPEN (exprs)? BRACKET_CLOSE;
 assignStmt : lvalue ASSIGNMENT expr;
 lvalue : ID;
-outStmt : OUTPUT ASSIGNMENT expr|STRING;
+outStmt : OUTPUT ASSIGNMENT (expr|STRING);
 ifStmt : IF test THEN stmtList END;
 whileStmt : WHILE test DO stmtList END;
 forStmt : FOR (ID | INTEGER) TO (ID | INTEGER) DO stmtList END;
