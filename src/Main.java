@@ -9,8 +9,8 @@ public class Main {
 
         try {
 //            CharStream input = new ANTLRFileStream("/Users/adheenababu/IdeaProjects/CompilerDesignPL-0/src/InputFiles/sum");
-            CharStream input = new ANTLRFileStream("/Users/adheenababu/IdeaProjects/CompilerDesignPL-0/src/InputFiles/multiplication");
-//            CharStream input = new ANTLRFileStream("/Users/adheenababu/IdeaProjects/CompilerDesignPL-0/src/InputFiles/odd_numbers");
+//            CharStream input = new ANTLRFileStream("/Users/adheenababu/IdeaProjects/CompilerDesignPL-0/src/InputFiles/multiplication");
+            CharStream input = new ANTLRFileStream("/Users/adheenababu/IdeaProjects/CompilerDesignPL-0/src/InputFiles/odd_numbers");
 //            CharStream input = new ANTLRFileStream("/Users/adheenababu/IdeaProjects/CompilerDesignPL-0/src/InputFiles/fibonacci");
 //            CharStream input = new ANTLRFileStream("/Users/adheenababu/IdeaProjects/CompilerDesignPL-0/src/InputFiles/stack");
 
@@ -24,6 +24,7 @@ public class Main {
             CommonTokenStream token = new CommonTokenStream(lexer);
             LexarParser parser = new LexarParser(token);
             parser.start();
+            System.out.println("PARSED SUCCESSFULLY!");
         } catch (Exception e) {
             System.out.println(e);
         }

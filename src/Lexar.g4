@@ -17,22 +17,30 @@ varDeclItem : ID COLON type;
 procDecl : PROCEDURE ID BRACKET_OPEN (formalDecl (COMMA formalDecl)*)? BRACKET_CLOSE SEMICOLON block ID;
 formalDecl : ID COLON type;
 type : INT
-    | CHAR;
+    | CHAR
+    | ARRAY SQ_OPEN INTEGER SQ_CLOSE OF type;
 stmtList : ((decl SEMICOLON)+ | (stmt SEMICOLON)+)*;
 stmt : callStmt
     | assignStmt
+    | returnStmt
     | outStmt
     | ifStmt
     | whileStmt
     | forStmt;
 callStmt : ID BRACKET_OPEN (exprs)? BRACKET_CLOSE;
-assignStmt : lvalue ASSIGNMENT expr;
-lvalue : ID;
-outStmt : OUTPUT ASSIGNMENT (expr|STRING);
-ifStmt : IF test THEN stmtList END;
-whileStmt : WHILE test DO stmtList END;
-forStmt : FOR (ID | INTEGER) TO (ID | INTEGER) DO stmtList END;
-test : ODD sum
+assignStmt : lvalue ASSIGNMENT (expr);
+lvalue : ID
+    | ID SQ_OPEN sum SQ_CLOSE;
+returnStmt : RETURN (sum)?;
+outStmt : OUTPUT ASSIGNMENT (expr | STRING);
+ifStmt : IF condition THEN stmtList (SQ_OPEN ELSE stmtList SQ_CLOSE)? END;
+whileStmt : WHILE condition DO stmtList END;
+forStmt : FOR sum TO sum DO stmtList END;
+condition : innerStatement
+    | innerStatement AND condition
+    | innerStatement OR condition
+    | NOT condition;
+innerStatement :  ODD sum
     | sum relop sum;
 relop : LT
     | LTE
@@ -49,6 +57,7 @@ factor : MINUS factor
     | lvalue
     | INTEGER
     | INPUT
+    | callStmt
     | BRACKET_OPEN expr BRACKET_CLOSE;
 
 //Spaces and non-graphical characters
@@ -64,7 +73,6 @@ CONST: 'const';
 VAR: 'var';
 INT: 'int';
 CHAR: 'char';
-BOOLEAN: 'bool';
 IF: 'if';
 THEN: 'then';
 ELSE: 'else';
@@ -72,10 +80,6 @@ INPUT: 'input';
 OUTPUT: 'output';
 ODD: 'odd';
 RETURN: 'return';
-
-//Booleans
-TRUE: 'true';
-FALSE: 'false';
 
 //Boolean operators
 OR: 'or';

@@ -11,7 +11,7 @@ begin
 
     for 0 to 10
         do
-            arr[position] := input;
+            arr [position] := input;
             position := position + 1;
     end;
 
@@ -22,8 +22,8 @@ begin
 
     for 0 to 10
         do
-            if odd arr[position] then
-                sum := sum + arr[position];
+            if odd arr [position] then
+                sum := sum + arr [position];
             end;
             position := position + 1;
     end;
