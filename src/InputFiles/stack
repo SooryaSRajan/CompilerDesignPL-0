@@ -14,7 +14,7 @@ module main;
         end;
     end push;
 
-    procedure pop();
+    procedure pop():int;
     begin
         if position >= 0 then
             position := position - 1;
@@ -25,7 +25,7 @@ module main;
         end;
     end pop;
 
-    procedure top();
+    procedure top():int;
     begin
         if position >= 0 then
             return stack[position];

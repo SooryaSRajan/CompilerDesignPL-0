@@ -14,7 +14,7 @@ constExpr : ID
     | CHARACTER;
 varDecl : VAR varDeclItem (COMMA varDeclItem)*;
 varDeclItem : ID COLON type;
-procDecl : PROCEDURE ID BRACKET_OPEN (formalDecl (COMMA formalDecl)*)? BRACKET_CLOSE SEMICOLON block ID;
+procDecl : PROCEDURE ID BRACKET_OPEN (formalDecl (COMMA formalDecl)*)? BRACKET_CLOSE (COLON type)? SEMICOLON block ID;
 formalDecl : ID COLON type;
 type : INT
     | CHAR
