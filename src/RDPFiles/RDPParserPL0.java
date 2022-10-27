@@ -31,6 +31,7 @@ public class RDPParserPL0 {
                         if (token.getType() == LexarLexer.MAIN) {
                             token = lexer.nextToken();
                             if (token.getType() == LexarLexer.DOT) {
+                                System.out.println("Exiting program block, token: " + token.getText());
                                 return true;
                             }
                         }
@@ -50,6 +51,7 @@ public class RDPParserPL0 {
                 if (stmtList()) {
                     if (token.getType() == LexarLexer.END) {
                         token = lexer.nextToken();
+                        System.out.println("Exiting block, token: " + token.getText());
                         return true;
                     }
                 }
@@ -68,6 +70,7 @@ public class RDPParserPL0 {
                 return false;
             }
         }
+        System.out.println("Exiting declList, token: " + token.getText());
         return true;
     }
 
@@ -77,10 +80,13 @@ public class RDPParserPL0 {
     public boolean decl() {
         System.out.println("IN DECL");
         if (token.getType() == LexarLexer.CONST && constDecl()) {
+            System.out.println("Exiting decl, token: " + token.getText());
             return true;
         } else if (token.getType() == LexarLexer.VAR && varDecl()) {
+            System.out.println("Exiting decl, token: " + token.getText());
             return true;
         } else if (token.getType() == LexarLexer.PROCEDURE && procDecl()) {
+            System.out.println("Exiting decl, token: " + token.getText());
             return true;
         }
         return false;
@@ -98,6 +104,7 @@ public class RDPParserPL0 {
                         return false;
                     }
                 }
+                System.out.println("Exiting constDecl, token: " + token.getText());
                 return true;
             }
         }
@@ -115,6 +122,7 @@ public class RDPParserPL0 {
                     if (token.getType() == LexarLexer.EQUAL) {
                         token = lexer.nextToken();
                         if (constExpr()) {
+                            System.out.println("Exiting constDeclItem, token: " + token.getText());
                             return true;
                         }
                     }
@@ -131,12 +139,15 @@ public class RDPParserPL0 {
         System.out.println("IN CONSTEXPR");
         if (token.getType() == LexarLexer.ID) {
             token = lexer.nextToken();
+            System.out.println("Exiting constExpr, token: " + token.getText());
             return true;
         } else if (token.getType() == LexarLexer.INTEGER) {
             token = lexer.nextToken();
+            System.out.println("Exiting constExpr, token: " + token.getText());
             return true;
         } else if (token.getType() == LexarLexer.CHARACTER) {
             token = lexer.nextToken();
+            System.out.println("Exiting constExpr, token: " + token.getText());
             return true;
         }
         return false;
@@ -154,6 +165,7 @@ public class RDPParserPL0 {
                         return false;
                     }
                 }
+                System.out.println("Exiting varDecl, token: " + token.getText());
                 return true;
             }
         }
@@ -168,6 +180,7 @@ public class RDPParserPL0 {
             if (token.getType() == LexarLexer.COLON) {
                 token = lexer.nextToken();
                 if (type()) {
+                    System.out.println("Exiting varDeclItem, token: " + token.getText());
                     return true;
                 }
             }
@@ -205,6 +218,7 @@ public class RDPParserPL0 {
                             if (block()) {
                                 if (token.getType() == LexarLexer.ID) {
                                     token = lexer.nextToken();
+                                    System.out.println("Exiting procDecl, token: " + token.getText());
                                     return true;
                                 }
                             }
@@ -224,6 +238,7 @@ public class RDPParserPL0 {
             if (token.getType() == LexarLexer.COLON) {
                 token = lexer.nextToken();
                 if (type()) {
+                    System.out.println("Exiting formalDecl, token: " + token.getText());
                     return true;
                 }
             }
@@ -239,9 +254,11 @@ public class RDPParserPL0 {
         System.out.println("IN TYPE");
         if (token.getType() == LexarLexer.INT) {
             token = lexer.nextToken();
+            System.out.println("Exiting type, token: " + token.getText());
             return true;
         } else if (token.getType() == LexarLexer.CHAR) {
             token = lexer.nextToken();
+            System.out.println("Exiting type, token: " + token.getText());
             return true;
         } else if (token.getType() == LexarLexer.ARRAY) {
             token = lexer.nextToken();
@@ -254,6 +271,7 @@ public class RDPParserPL0 {
                         if (token.getType() == LexarLexer.OF) {
                             token = lexer.nextToken();
                             if (type()) {
+                                System.out.println("Exiting type, token: " + token.getText());
                                 return true;
                             }
                         }
@@ -290,6 +308,7 @@ public class RDPParserPL0 {
                 }
             }
         }
+        System.out.println("Exiting stmtList, token: " + token.getText());
         return true;
     }
 
@@ -304,18 +323,25 @@ public class RDPParserPL0 {
     public boolean stmt() {
         System.out.println("IN STMT");
         if (callStmt()) {
+            System.out.println("Exiting stmt, token: " + token.getText());
             return true;
         } else if (assignStmt()) {
+            System.out.println("Exiting stmt, token: " + token.getText());
             return true;
         } else if (returnStmt()) {
+            System.out.println("Exiting stmt, token: " + token.getText());
             return true;
         } else if (outStmt()) {
+            System.out.println("Exiting stmt, token: " + token.getText());
             return true;
         } else if (ifStmt()) {
+            System.out.println("Exiting stmt, token: " + token.getText());
             return true;
         } else if (whileStmt()) {
+            System.out.println("Exiting stmt, token: " + token.getText());
             return true;
         } else if (forStmt()) {
+            System.out.println("Exiting stmt, token: " + token.getText());
             return true;
         }
         return false;
@@ -331,11 +357,13 @@ public class RDPParserPL0 {
                 if (exprs()) {
                     if (token.getType() == LexarLexer.BRACKET_CLOSE) {
                         token = lexer.nextToken();
+                        System.out.println("Exiting callStmt, token: " + token.getText());
                         return true;
                     }
                 } else {
                     if (token.getType() == LexarLexer.BRACKET_CLOSE) {
                         token = lexer.nextToken();
+                        System.out.println("Exiting callStmt, token: " + token.getText());
                         return true;
                     }
                 }
@@ -351,6 +379,7 @@ public class RDPParserPL0 {
             if (token.getType() == LexarLexer.ASSIGNMENT) {
                 token = lexer.nextToken();
                 if (expr()) {
+                    System.out.println("Exiting assignStmt, token: " + token.getText());
                     return true;
                 }
             }
@@ -369,10 +398,12 @@ public class RDPParserPL0 {
                 if (sum()) {
                     if (token.getType() == LexarLexer.SQ_CLOSE) {
                         token = lexer.nextToken();
+                        System.out.println("Exiting lvalue, token: " + token.getText());
                         return true;
                     }
                 }
             } else {
+                System.out.println("Exiting lvalue, token: " + token.getText());
                 return true;
             }
         }
@@ -385,8 +416,10 @@ public class RDPParserPL0 {
         if (token.getType() == LexarLexer.RETURN) {
             token = lexer.nextToken();
             if (sum()) {
+                System.out.println("Exiting returnStmt, token: " + token.getText());
                 return true;
             } else {
+                System.out.println("Exiting returnStmt, token: " + token.getText());
                 return true;
             }
         }
@@ -401,9 +434,11 @@ public class RDPParserPL0 {
             if (token.getType() == LexarLexer.ASSIGNMENT) {
                 token = lexer.nextToken();
                 if (expr()) {
+                    System.out.println("Exiting outStmt, token: " + token.getText());
                     return true;
                 } else if (token.getType() == LexarLexer.STRING) {
                     token = lexer.nextToken();
+                    System.out.println("Exiting outStmt, token: " + token.getText());
                     return true;
                 }
             }
@@ -429,6 +464,7 @@ public class RDPParserPL0 {
                                         token = lexer.nextToken();
                                         if (token.getType() == LexarLexer.END) {
                                             token = lexer.nextToken();
+                                            System.out.println("Exiting ifStmt, token: " + token.getText());
                                             return true;
                                         }
                                     }
@@ -436,6 +472,7 @@ public class RDPParserPL0 {
                             }
                         } else if (token.getType() == LexarLexer.END) {
                             token = lexer.nextToken();
+                            System.out.println("Exiting ifStmt, token: " + token.getText());
                             return true;
                         }
                     }
@@ -456,6 +493,7 @@ public class RDPParserPL0 {
                     if (stmtList()) {
                         if (token.getType() == LexarLexer.END) {
                             token = lexer.nextToken();
+                            System.out.println("Exiting whileStmt, token: " + token.getText());
                             return true;
                         }
                     }
@@ -479,6 +517,7 @@ public class RDPParserPL0 {
                             if (stmtList()) {
                                 if (token.getType() == LexarLexer.END) {
                                     token = lexer.nextToken();
+                                    System.out.println("Exiting forStmt, token: " + token.getText());
                                     return true;
                                 }
                             }
@@ -501,19 +540,23 @@ public class RDPParserPL0 {
             if (token.getType() == LexarLexer.AND) {
                 token = lexer.nextToken();
                 if (condition()) {
+                    System.out.println("Exiting condition, token: " + token.getText());
                     return true;
                 }
             } else if (token.getType() == LexarLexer.OR) {
                 token = lexer.nextToken();
                 if (condition()) {
+                    System.out.println("Exiting condition, token: " + token.getText());
                     return true;
                 }
             } else {
+                System.out.println("Exiting condition, token: " + token.getText());
                 return true;
             }
         } else if (token.getType() == LexarLexer.NOT) {
             token = lexer.nextToken();
             if (condition()) {
+                System.out.println("Exiting condition, token: " + token.getText());
                 return true;
             }
         }
@@ -527,11 +570,13 @@ public class RDPParserPL0 {
         if (token.getType() == LexarLexer.ODD) {
             token = lexer.nextToken();
             if (sum()) {
+                System.out.println("Exiting innerStatement, token: " + token.getText());
                 return true;
             }
         } else if (sum()) {
             if (relop()) {
                 if (sum()) {
+                    System.out.println("Exiting innerStatement, token: " + token.getText());
                     return true;
                 }
             }
@@ -549,21 +594,27 @@ public class RDPParserPL0 {
         System.out.println("IN RELOP");
         if (token.getType() == LexarLexer.LT) {
             token = lexer.nextToken();
+            System.out.println("Exiting relop, token: " + token.getText());
             return true;
         } else if (token.getType() == LexarLexer.LTE) {
             token = lexer.nextToken();
+            System.out.println("Exiting relop, token: " + token.getText());
             return true;
         } else if (token.getType() == LexarLexer.EQUAL) {
             token = lexer.nextToken();
+            System.out.println("Exiting relop, token: " + token.getText());
             return true;
         } else if (token.getType() == LexarLexer.GTE) {
             token = lexer.nextToken();
+            System.out.println("Exiting relop, token: " + token.getText());
             return true;
         } else if (token.getType() == LexarLexer.GT) {
             token = lexer.nextToken();
+            System.out.println("Exiting relop, token: " + token.getText());
             return true;
         } else if (token.getType() == LexarLexer.NOTEQUAL) {
             token = lexer.nextToken();
+            System.out.println("Exiting relop, token: " + token.getText());
             return true;
         }
         return false;
@@ -579,6 +630,7 @@ public class RDPParserPL0 {
                     return false;
                 }
             }
+            System.out.println("Exiting exprs, token: " + token.getText());
             return true;
         }
         return false;
@@ -590,9 +642,11 @@ public class RDPParserPL0 {
     public boolean expr() {
         System.out.println("IN EXPR");
         if (sum()) {
+            System.out.println("Exiting expr, token: " + token.getText());
             return true;
         } else if (token.getType() == LexarLexer.CHARACTER) {
             token = lexer.nextToken();
+            System.out.println("Exiting expr, token: " + token.getText());
             return true;
         }
         return false;
@@ -608,6 +662,7 @@ public class RDPParserPL0 {
                     return false;
                 }
             }
+            System.out.println("Exiting sum, token: " + token.getText());
             return true;
         }
         return false;
@@ -623,6 +678,7 @@ public class RDPParserPL0 {
                     return false;
                 }
             }
+            System.out.println("Exiting term, token: " + token.getText());
             return true;
         }
         return false;
@@ -639,31 +695,34 @@ public class RDPParserPL0 {
         if (token.getType() == LexarLexer.MINUS) {
             token = lexer.nextToken();
             if (factor()) {
+                System.out.println("Exiting factor, token: " + token.getText());
                 return true;
             }
         } else if (lvalue()) {
+            System.out.println("Exiting factor, token: " + token.getText());
             return true;
         } else if (token.getType() == LexarLexer.INTEGER) {
             token = lexer.nextToken();
+            System.out.println("Exiting factor, token: " + token.getText());
             return true;
         } else if (token.getType() == LexarLexer.INPUT) {
             token = lexer.nextToken();
+            System.out.println("Exiting factor, token: " + token.getText());
             return true;
         } else if (callStmt()) {
+            System.out.println("Exiting factor, token: " + token.getText());
             return true;
         } else if (token.getType() == LexarLexer.BRACKET_OPEN) {
             token = lexer.nextToken();
             if (expr()) {
                 if (token.getType() == LexarLexer.BRACKET_CLOSE) {
                     token = lexer.nextToken();
+                    System.out.println("Exiting factor, token: " + token.getText());
                     return true;
                 }
             }
         }
         return false;
     }
-
-
-
 
 }
