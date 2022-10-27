@@ -39,6 +39,7 @@ public class RDPParserPL0 {
                 }
             }
         }
+        System.out.println("False condition in program block, token: " + token.getText());
         return false;
     }
 
@@ -57,6 +58,7 @@ public class RDPParserPL0 {
                 }
             }
         }
+        System.out.println("False condition in BLOCK block, token: " + token.getText());
         return false;
     }
 
@@ -67,6 +69,7 @@ public class RDPParserPL0 {
             if (token.getType() == LexarLexer.SEMICOLON) {
                 token = lexer.nextToken();
             } else {
+                System.out.println("False condition in declList block, token: " + token.getText());
                 return false;
             }
         }
@@ -89,6 +92,7 @@ public class RDPParserPL0 {
             System.out.println("Exiting decl, token: " + token.getText());
             return true;
         }
+        System.out.println("False condition in decl block, token: " + token.getText());
         return false;
     }
 
@@ -101,6 +105,7 @@ public class RDPParserPL0 {
                 while (token.getType() == LexarLexer.COMMA) {
                     token = lexer.nextToken();
                     if (!constDeclItem()) {
+                        System.out.println("False condition in constDecl block, token: " + token.getText());
                         return false;
                     }
                 }
@@ -108,6 +113,7 @@ public class RDPParserPL0 {
                 return true;
             }
         }
+        System.out.println("False condition in constDecl block, token: " + token.getText());
         return false;
     }
 
@@ -129,6 +135,7 @@ public class RDPParserPL0 {
                 }
             }
         }
+        System.out.println("False condition in constDeclItem block, token: " + token.getText());
         return false;
     }
 
@@ -150,6 +157,7 @@ public class RDPParserPL0 {
             System.out.println("Exiting constExpr, token: " + token.getText());
             return true;
         }
+        System.out.println("False condition in constExpr block, token: " + token.getText());
         return false;
     }
 
@@ -162,6 +170,7 @@ public class RDPParserPL0 {
                 while (token.getType() == LexarLexer.COMMA) {
                     token = lexer.nextToken();
                     if (!varDeclItem()) {
+                        System.out.println("False condition in varDecl block, token: " + token.getText());
                         return false;
                     }
                 }
@@ -169,6 +178,7 @@ public class RDPParserPL0 {
                 return true;
             }
         }
+        System.out.println("False condition in varDecl block, token: " + token.getText());
         return false;
     }
 
@@ -185,6 +195,7 @@ public class RDPParserPL0 {
                 }
             }
         }
+        System.out.println("False condition in varDeclItem block, token: " + token.getText());
         return false;
     }
 
@@ -201,6 +212,7 @@ public class RDPParserPL0 {
                         while (token.getType() == LexarLexer.COMMA) {
                             token = lexer.nextToken();
                             if (!formalDecl()) {
+                                System.out.println("False condition in procDecl block, token: " + token.getText());
                                 return false;
                             }
                         }
@@ -210,6 +222,7 @@ public class RDPParserPL0 {
                         if (token.getType() == LexarLexer.COLON) {
                             token = lexer.nextToken();
                             if (!type()) {
+                                System.out.println("False condition in procDecl block, token: " + token.getText());
                                 return false;
                             }
                         }
@@ -227,6 +240,7 @@ public class RDPParserPL0 {
                 }
             }
         }
+        System.out.println("False condition in procDecl block, token: " + token.getText());
         return false;
     }
 
@@ -243,6 +257,7 @@ public class RDPParserPL0 {
                 }
             }
         }
+        System.out.println("False condition in formalDecl block, token: " + token.getText());
         return false;
     }
 
@@ -279,6 +294,7 @@ public class RDPParserPL0 {
                 }
             }
         }
+        System.out.println("False condition in type block, token: " + token.getText());
         return false;
     }
 
@@ -292,6 +308,7 @@ public class RDPParserPL0 {
                     if (token.getType() == LexarLexer.SEMICOLON) {
                         token = lexer.nextToken();
                     } else {
+                        System.out.println("False condition in stmtList block, token: " + token.getText());
                         return false;
                     }
                 }
@@ -306,6 +323,7 @@ public class RDPParserPL0 {
                     if (token.getType() == LexarLexer.SEMICOLON) {
                         token = lexer.nextToken();
                     } else {
+                        System.out.println("False condition in stmtList block, token: " + token.getText());
                         return false;
                     }
                 }
@@ -347,6 +365,7 @@ public class RDPParserPL0 {
             System.out.println("Exiting stmt, token: " + token.getText());
             return true;
         }
+        System.out.println("False condition in stmt block, token: " + token.getText());
         return false;
     }
 
@@ -372,6 +391,7 @@ public class RDPParserPL0 {
                 }
             }
         }
+        System.out.println("False condition in callStmt block, token: " + token.getText());
         return false;
     }
 
@@ -387,6 +407,7 @@ public class RDPParserPL0 {
                 }
             }
         }
+        System.out.println("False condition in assignStmt block, token: " + token.getText());
         return false;
     }
 
@@ -410,6 +431,7 @@ public class RDPParserPL0 {
                 return true;
             }
         }
+        System.out.println("False condition in lvalue block, token: " + token.getText());
         return false;
     }
 
@@ -426,6 +448,7 @@ public class RDPParserPL0 {
                 return true;
             }
         }
+        System.out.println("False condition in returnStatement block, token: " + token.getText());
         return false;
     }
 
@@ -446,6 +469,7 @@ public class RDPParserPL0 {
                 }
             }
         }
+        System.out.println("False condition in outStmt block, token: " + token.getText());
         return false;
     }
 
@@ -482,6 +506,7 @@ public class RDPParserPL0 {
                 }
             }
         }
+        System.out.println("False condition in ifStmt block, token: " + token.getText());
         return false;
     }
 
@@ -503,6 +528,7 @@ public class RDPParserPL0 {
                 }
             }
         }
+        System.out.println("False condition in whileStmt block, token: " + token.getText());
         return false;
     }
 
@@ -529,6 +555,7 @@ public class RDPParserPL0 {
                 }
             }
         }
+        System.out.println("False condition in forStmt block, token: " + token.getText());
         return false;
     }
 
@@ -563,6 +590,7 @@ public class RDPParserPL0 {
                 return true;
             }
         }
+        System.out.println("False condition in condition block, token: " + token.getText());
         return false;
     }
 
@@ -586,6 +614,7 @@ public class RDPParserPL0 {
                 }
             }
         }
+        System.out.println("False condition in innerStatement block, token: " + token.getText());
         return false;
     }
 
@@ -622,6 +651,7 @@ public class RDPParserPL0 {
             System.out.println("Exiting relop, token: " + token.getText());
             return true;
         }
+        System.out.println("False condition in relop block, token: " + token.getText());
         return false;
     }
 
@@ -632,12 +662,14 @@ public class RDPParserPL0 {
             while (token.getType() == LexarLexer.COMMA) {
                 token = lexer.nextToken();
                 if (!expr()) {
+                    System.out.println("False condition in exprs block, token: " + token.getText());
                     return false;
                 }
             }
             System.out.println("Exiting exprs, token: " + token.getText());
             return true;
         }
+        System.out.println("False condition in exprs block, token: " + token.getText());
         return false;
     }
 
@@ -656,6 +688,7 @@ public class RDPParserPL0 {
             System.out.println("Exiting expr, token: " + token.getText());
             return true;
         }
+        System.out.println("False condition in expr block, token: " + token.getText());
         return false;
     }
 
@@ -666,12 +699,14 @@ public class RDPParserPL0 {
             while (token.getType() == LexarLexer.PLUS || token.getType() == LexarLexer.MINUS) {
                 token = lexer.nextToken();
                 if (!term()) {
+                    System.out.println("False condition in sum block, token: " + token.getText());
                     return false;
                 }
             }
             System.out.println("Exiting sum, token: " + token.getText());
             return true;
         }
+        System.out.println("False condition in sum block, token: " + token.getText());
         return false;
     }
 
@@ -682,12 +717,14 @@ public class RDPParserPL0 {
             while (token.getType() == LexarLexer.MULTIPLICATION || token.getType() == LexarLexer.DIVISION) {
                 token = lexer.nextToken();
                 if (!factor()) {
+                    System.out.println("False condition in term block, token: " + token.getText());
                     return false;
                 }
             }
             System.out.println("Exiting term, token: " + token.getText());
             return true;
         }
+        System.out.println("False condition in term block, token: " + token.getText());
         return false;
     }
 
@@ -729,6 +766,7 @@ public class RDPParserPL0 {
                 }
             }
         }
+        System.out.println("False condition in factor block, token: " + token.getText());
         return false;
     }
 
