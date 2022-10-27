@@ -14,7 +14,7 @@ public class Main {
             //gets the file as a character stream
             //uncomment the file path as needed
 
-            CharStream input = new ANTLRFileStream("/Users/sooryasrajan/AntlrCompilerDesign/src/InputFiles/sum");
+            CharStream input = new ANTLRFileStream("/Users/adheenababu/IdeaProjects/CompilerDesignPL-0/src/InputFiles/sum");
             //CharStream input = new ANTLRFileStream("/Users/sooryasrajan/AntlrCompilerDesign/src/InputFiles/multiplication");
             //CharStream input = new ANTLRFileStream("/Users/sooryasrajan/AntlrCompilerDesign/src/InputFiles/odd_numbers");
             //CharStream input = new ANTLRFileStream("/Users/sooryasrajan/AntlrCompilerDesign/src/InputFiles/fibonacci");
@@ -27,6 +27,7 @@ public class Main {
 //            CommonTokenStream token = new CommonTokenStream(lexer);
 
             RDPParserPL0 parserPL0 = new RDPParserPL0(lexer);
+            parserPL0.start();
 
             //The token stream is parsed with the respective grammars to check for errors
 //            LexarParser parser = new LexarParser(token);

@@ -20,7 +20,7 @@ public class RDPParserPL0 {
 
     //program : MODULE MAIN SEMICOLON block MAIN DOT;
     public boolean program() {
-        System.out.println("IN PROGRAM");
+        System.out.println("IN PROGRAM, token: " + token.getText());
         if (token.getType() == LexarLexer.MODULE) {
             token = lexer.nextToken();
             if (token.getType() == LexarLexer.MAIN) {
@@ -45,7 +45,7 @@ public class RDPParserPL0 {
 
     //block : declList BEGIN stmtList END;
     public boolean block() {
-        System.out.println("IN BLOCK");
+        System.out.println("IN BLOCK, token: " + token.getText());
         if (declList()) {
             if (token.getType() == LexarLexer.BEGIN) {
                 token = lexer.nextToken();
@@ -64,7 +64,7 @@ public class RDPParserPL0 {
 
     //declList : (decl SEMICOLON)*;
     public boolean declList() {
-        System.out.println("IN DECLLIST");
+        System.out.println("IN DECLLIST, token: " + token.getText());
         while (decl()) {
             if (token.getType() == LexarLexer.SEMICOLON) {
                 token = lexer.nextToken();
@@ -81,7 +81,7 @@ public class RDPParserPL0 {
     //    | varDecl
     //    | procDecl;
     public boolean decl() {
-        System.out.println("IN DECL");
+        System.out.println("IN DECL, token: " + token.getText());
         if (token.getType() == LexarLexer.CONST && constDecl()) {
             System.out.println("Exiting decl, token: " + token.getText());
             return true;
@@ -98,7 +98,7 @@ public class RDPParserPL0 {
 
     //constDecl : CONST constDeclItem (COMMA constDeclItem)*;
     public boolean constDecl() {
-        System.out.println("IN CONSTDECL");
+        System.out.println("IN CONSTDECL, token: " + token.getText());
         if (token.getType() == LexarLexer.CONST) {
             token = lexer.nextToken();
             if (constDeclItem()) {
@@ -119,7 +119,7 @@ public class RDPParserPL0 {
 
     //constDeclItem : ID COLON type EQUAL constExpr;
     public boolean constDeclItem() {
-        System.out.println("IN CONSTDECLITEM");
+        System.out.println("IN CONSTDECLITEM, token: " + token.getText());
         if (token.getType() == LexarLexer.ID) {
             token = lexer.nextToken();
             if (token.getType() == LexarLexer.COLON) {
@@ -143,7 +143,7 @@ public class RDPParserPL0 {
     //    | INTEGER
     //    | CHARACTER;
     public boolean constExpr() {
-        System.out.println("IN CONSTEXPR");
+        System.out.println("IN CONSTEXPR, token: " + token.getText());
         if (token.getType() == LexarLexer.ID) {
             token = lexer.nextToken();
             System.out.println("Exiting constExpr, token: " + token.getText());
@@ -163,7 +163,7 @@ public class RDPParserPL0 {
 
     //varDecl : VAR varDeclItem (COMMA varDeclItem)*;
     public boolean varDecl() {
-        System.out.println("IN VARDECL");
+        System.out.println("IN VARDECL, token: " + token.getText());
         if (token.getType() == LexarLexer.VAR) {
             token = lexer.nextToken();
             if (varDeclItem()) {
@@ -184,7 +184,7 @@ public class RDPParserPL0 {
 
     //varDeclItem : ID COLON type;
     public boolean varDeclItem() {
-        System.out.println("IN VARDECLITEM");
+        System.out.println("IN VARDECLITEM, token: " + token.getText());
         if (token.getType() == LexarLexer.ID) {
             token = lexer.nextToken();
             if (token.getType() == LexarLexer.COLON) {
@@ -201,7 +201,7 @@ public class RDPParserPL0 {
 
     //procDecl : PROCEDURE ID BRACKET_OPEN (formalDecl (COMMA formalDecl)*)? BRACKET_CLOSE (COLON type)? SEMICOLON block ID;
     public boolean procDecl() {
-        System.out.println("IN PROCDECL");
+        System.out.println("IN PROCDECL, token: " + token.getText());
         if (token.getType() == LexarLexer.PROCEDURE) {
             token = lexer.nextToken();
             if (token.getType() == LexarLexer.ID) {
@@ -246,7 +246,7 @@ public class RDPParserPL0 {
 
     //formalDecl : ID COLON type;
     public boolean formalDecl() {
-        System.out.println("IN FORMALDECL");
+        System.out.println("IN FORMALDECL, token: " + token.getText());
         if (token.getType() == LexarLexer.ID) {
             token = lexer.nextToken();
             if (token.getType() == LexarLexer.COLON) {
@@ -266,7 +266,7 @@ public class RDPParserPL0 {
     //    | ARRAY SQ_OPEN INTEGER SQ_CLOSE OF type;
 
     public boolean type() {
-        System.out.println("IN TYPE");
+        System.out.println("IN TYPE, token: " + token.getText());
         if (token.getType() == LexarLexer.INT) {
             token = lexer.nextToken();
             System.out.println("Exiting type, token: " + token.getText());
@@ -300,7 +300,7 @@ public class RDPParserPL0 {
 
     //stmtList : ((decl SEMICOLON)+ | (stmt SEMICOLON)+)*;
     public boolean stmtList() {
-        System.out.println("IN STMTLIST");
+        System.out.println("IN STMTLIST, token: " + token.getText());
         if ((token.getType() == LexarLexer.CONST || token.getType() == LexarLexer.VAR || token.getType() == LexarLexer.PROCEDURE ) && decl()) {
             if (token.getType() == LexarLexer.SEMICOLON) {
                 token = lexer.nextToken();
@@ -342,7 +342,7 @@ public class RDPParserPL0 {
     //    | forStmt;
 
     public boolean stmt() {
-        System.out.println("IN STMT");
+        System.out.println("IN STMT, token: " + token.getText());
         if (token.getType() == LexarLexer.ID && callStmt()) {
             System.out.println("Exiting stmt, token: " + token.getText());
             return true;
@@ -371,7 +371,7 @@ public class RDPParserPL0 {
 
     //callStmt : ID BRACKET_OPEN (exprs)? BRACKET_CLOSE;
     public boolean callStmt() {
-        System.out.println("IN CALLSTMT");
+        System.out.println("IN CALLSTMT, token: " + token.getText());
         if (token.getType() == LexarLexer.ID) {
             token = lexer.nextToken();
             if (token.getType() == LexarLexer.BRACKET_OPEN) {
@@ -397,7 +397,7 @@ public class RDPParserPL0 {
 
     //assignStmt : lvalue ASSIGNMENT (expr);
     public boolean assignStmt() {
-        System.out.println("IN ASSIGNSTMT");
+        System.out.println("IN ASSIGNSTMT, token: " + token.getText());
         if (lvalue()) {
             if (token.getType() == LexarLexer.ASSIGNMENT) {
                 token = lexer.nextToken();
@@ -414,7 +414,7 @@ public class RDPParserPL0 {
     //lvalue : ID
     //    | ID SQ_OPEN sum SQ_CLOSE;
     public boolean lvalue() {
-        System.out.println("IN LVALUE");
+        System.out.println("IN LVALUE, token: " + token.getText());
         if (token.getType() == LexarLexer.ID) {
             token = lexer.nextToken();
             if (token.getType() == LexarLexer.SQ_OPEN) {
@@ -437,7 +437,7 @@ public class RDPParserPL0 {
 
     //returnStmt : RETURN (sum)?;
     public boolean returnStmt() {
-        System.out.println("IN RETURNSTMT");
+        System.out.println("IN RETURNSTMT, token: " + token.getText());
         if (token.getType() == LexarLexer.RETURN) {
             token = lexer.nextToken();
             if (sum()) {
@@ -454,7 +454,7 @@ public class RDPParserPL0 {
 
     //outStmt : OUTPUT ASSIGNMENT (expr | STRING);
     public boolean outStmt() {
-        System.out.println("IN OUTSTMT");
+        System.out.println("IN OUTSTMT, token: " + token.getText());
         if (token.getType() == LexarLexer.OUTPUT) {
             token = lexer.nextToken();
             if (token.getType() == LexarLexer.ASSIGNMENT) {
@@ -475,7 +475,7 @@ public class RDPParserPL0 {
 
     //ifStmt : IF condition THEN stmtList (SQ_OPEN ELSE stmtList SQ_CLOSE)? END;
     public boolean ifStmt() {
-        System.out.println("IN IFSTMT");
+        System.out.println("IN IFSTMT, token: " + token.getText());
         if (token.getType() == LexarLexer.IF) {
             token = lexer.nextToken();
             if (condition()) {
@@ -512,7 +512,7 @@ public class RDPParserPL0 {
 
     //whileStmt : WHILE condition DO stmtList END;
     public boolean whileStmt() {
-        System.out.println("IN WHILESTMT");
+        System.out.println("IN WHILESTMT, token: " + token.getText());
         if (token.getType() == LexarLexer.WHILE) {
             token = lexer.nextToken();
             if (condition()) {
@@ -534,7 +534,7 @@ public class RDPParserPL0 {
 
     //forStmt : FOR sum TO sum DO stmtList END;
     public boolean forStmt() {
-        System.out.println("IN FORSTMT");
+        System.out.println("IN FORSTMT, token: " + token.getText());
         if (token.getType() == LexarLexer.FOR) {
             token = lexer.nextToken();
             if (sum()) {
@@ -565,7 +565,7 @@ public class RDPParserPL0 {
     //    | NOT condition;
 
     public boolean condition() {
-        System.out.println("IN CONDITION");
+        System.out.println("IN CONDITION, token: " + token.getText());
         if (innerStatement()) {
             if (token.getType() == LexarLexer.AND) {
                 token = lexer.nextToken();
@@ -597,7 +597,7 @@ public class RDPParserPL0 {
     //innerStatement :  ODD sum
     //    | sum relop sum;
     public boolean innerStatement() {
-        System.out.println("IN INNERSTATEMENT");
+        System.out.println("IN INNERSTATEMENT, token: " + token.getText());
         if (token.getType() == LexarLexer.ODD) {
             token = lexer.nextToken();
             if (sum()) {
@@ -625,7 +625,7 @@ public class RDPParserPL0 {
     //    | GT
     //    | NOTEQUAL;
     public boolean relop() {
-        System.out.println("IN RELOP");
+        System.out.println("IN RELOP, token: " + token.getText());
         if (token.getType() == LexarLexer.LT) {
             token = lexer.nextToken();
             System.out.println("Exiting relop, token: " + token.getText());
@@ -657,7 +657,7 @@ public class RDPParserPL0 {
 
     //exprs : expr (COMMA expr)*;
     public boolean exprs() {
-        System.out.println("IN EXPRS");
+        System.out.println("IN EXPRS, token: " + token.getText());
         if (expr()) {
             while (token.getType() == LexarLexer.COMMA) {
                 token = lexer.nextToken();
@@ -677,7 +677,7 @@ public class RDPParserPL0 {
     //    | CHARACTER;
 
     public boolean expr() {
-        System.out.println("IN EXPR");
+        System.out.println("IN EXPR, token: " + token.getText());
         if ((token.getType() == LexarLexer.MINUS || token.getType() == LexarLexer.ID ||
                 token.getType() == LexarLexer.INTEGER || token.getType() == LexarLexer.INPUT ||
                 token.getType() == LexarLexer.BRACKET_OPEN) && sum()) {
@@ -694,7 +694,7 @@ public class RDPParserPL0 {
 
     //sum : term ((PLUS | MINUS) term)*;
     public boolean sum() {
-        System.out.println("IN SUM");
+        System.out.println("IN SUM, token: " + token.getText());
         if (term()) {
             while (token.getType() == LexarLexer.PLUS || token.getType() == LexarLexer.MINUS) {
                 token = lexer.nextToken();
@@ -712,7 +712,7 @@ public class RDPParserPL0 {
 
     //term : factor ((MULTIPLICATION | DIVISION) factor)*;
     public boolean term() {
-        System.out.println("IN TERM");
+        System.out.println("IN TERM, token: " + token.getText());
         if (factor()) {
             while (token.getType() == LexarLexer.MULTIPLICATION || token.getType() == LexarLexer.DIVISION) {
                 token = lexer.nextToken();
@@ -735,7 +735,7 @@ public class RDPParserPL0 {
     //    | callStmt
     //    | BRACKET_OPEN expr BRACKET_CLOSE;
     public boolean factor() {
-        System.out.println("IN FACTOR");
+        System.out.println("IN FACTOR, token: " + token.getText());
         if (token.getType() == LexarLexer.MINUS) {
             token = lexer.nextToken();
             if (factor()) {
