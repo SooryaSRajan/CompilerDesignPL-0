@@ -299,34 +299,43 @@ public class RDPParserPL0 {
     //stmtList : ((decl SEMICOLON)+ | (stmt SEMICOLON)+)*;
     public boolean stmtList() {
         System.out.println("IN STMTLIST, token: " + token.getText());
-        if ((token.getType() == LexarLexer.CONST || token.getType() == LexarLexer.VAR || token.getType() == LexarLexer.PROCEDURE ) && decl()) {
-            token = lexer.nextToken();
-            if (token.getType() == LexarLexer.SEMICOLON) {
-                token = lexer.nextToken();
-                while (decl()) {
-                    if (token.getType() == LexarLexer.SEMICOLON) {
-                        token = lexer.nextToken();
-                    } else {
-                        System.out.println("False condition in stmtList block, token: " + token.getText());
-                        return false;
-                    }
-                }
-            }
-        } else if ((token.getType() == LexarLexer.ID || token.getType() == LexarLexer.ASSIGNMENT ||
+        while(token.getType() == LexarLexer.CONST || token.getType() == LexarLexer.VAR || token.getType() == LexarLexer.PROCEDURE ||
+                token.getType() == LexarLexer.ID || token.getType() == LexarLexer.ASSIGNMENT ||
                 token.getType() == LexarLexer.RETURN || token.getType() == LexarLexer.OUTPUT ||
                 token.getType() == LexarLexer.IF || token.getType() == LexarLexer.WHILE ||
-                token.getType() == LexarLexer.FOR) && stmt()) {
-            if (token.getType() == LexarLexer.SEMICOLON) {
+                token.getType() == LexarLexer.FOR) {
+            System.out.println("IN STMTLIST while loop, token: " + token.getText());
+            if ((token.getType() == LexarLexer.CONST || token.getType() == LexarLexer.VAR || token.getType() == LexarLexer.PROCEDURE) && decl()) {
                 token = lexer.nextToken();
-                while (stmt()) {
-                    if (token.getType() == LexarLexer.SEMICOLON) {
-                        token = lexer.nextToken();
-                    } else {
-                        System.out.println("False condition in stmtList block, token: " + token.getText());
-                        return false;
+                if (token.getType() == LexarLexer.SEMICOLON) {
+                    token = lexer.nextToken();
+                    while (decl()) {
+                        if (token.getType() == LexarLexer.SEMICOLON) {
+                            token = lexer.nextToken();
+                        } else {
+                            System.out.println("False condition in stmtList block, token: " + token.getText());
+                            return false;
+                        }
+                    }
+                }
+            } else if ((token.getType() == LexarLexer.ID || token.getType() == LexarLexer.ASSIGNMENT ||
+                    token.getType() == LexarLexer.RETURN || token.getType() == LexarLexer.OUTPUT ||
+                    token.getType() == LexarLexer.IF || token.getType() == LexarLexer.WHILE ||
+                    token.getType() == LexarLexer.FOR) && stmt()) {
+                token = lexer.nextToken();
+                if (token.getType() == LexarLexer.SEMICOLON) {
+                    token = lexer.nextToken();
+                    while (stmt()) {
+                        if (token.getType() == LexarLexer.SEMICOLON) {
+                            token = lexer.nextToken();
+                        } else {
+                            System.out.println("False condition in stmtList block, token: " + token.getText());
+                            return false;
+                        }
                     }
                 }
             }
+            token = lexer.nextToken();
         }
         System.out.println("Exiting stmtList, token: " + token.getText());
         return true;
