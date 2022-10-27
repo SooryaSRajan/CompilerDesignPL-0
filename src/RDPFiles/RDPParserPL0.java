@@ -268,11 +268,9 @@ public class RDPParserPL0 {
     public boolean type() {
         System.out.println("IN TYPE, token: " + token.getText());
         if (token.getType() == LexarLexer.INT) {
-            token = lexer.nextToken();
             System.out.println("Exiting type, token: " + token.getText());
             return true;
         } else if (token.getType() == LexarLexer.CHAR) {
-            token = lexer.nextToken();
             System.out.println("Exiting type, token: " + token.getText());
             return true;
         } else if (token.getType() == LexarLexer.ARRAY) {
@@ -302,6 +300,7 @@ public class RDPParserPL0 {
     public boolean stmtList() {
         System.out.println("IN STMTLIST, token: " + token.getText());
         if ((token.getType() == LexarLexer.CONST || token.getType() == LexarLexer.VAR || token.getType() == LexarLexer.PROCEDURE ) && decl()) {
+            token = lexer.nextToken();
             if (token.getType() == LexarLexer.SEMICOLON) {
                 token = lexer.nextToken();
                 while (decl()) {
