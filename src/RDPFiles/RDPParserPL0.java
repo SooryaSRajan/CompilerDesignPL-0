@@ -14,7 +14,8 @@ public class RDPParserPL0 {
 
     //start : program;
     public void start() {
-        program();
+        token = lexer.nextToken();
+        System.out.println(program());
     }
 
     //program : MODULE MAIN SEMICOLON block MAIN DOT;
@@ -37,6 +38,7 @@ public class RDPParserPL0 {
                 }
             }
         }
+
         return false;
     }
 
