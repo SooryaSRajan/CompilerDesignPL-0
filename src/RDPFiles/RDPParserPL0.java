@@ -31,7 +31,6 @@ public class RDPParserPL0 {
                         if (token.getType() == LexarLexer.MAIN) {
                             token = lexer.nextToken();
                             if (token.getType() == LexarLexer.DOT) {
-                                token = lexer.nextToken();
                                 return true;
                             }
                         }
@@ -77,11 +76,11 @@ public class RDPParserPL0 {
     //    | procDecl;
     public boolean decl() {
         System.out.println("IN DECL");
-        if (constDecl()) {
+        if (token.getType() == LexarLexer.CONST && constDecl()) {
             return true;
-        } else if (varDecl()) {
+        } else if (token.getType() == LexarLexer.VAR && varDecl()) {
             return true;
-        } else if (procDecl()) {
+        } else if (token.getType() == LexarLexer.PROCEDURE && procDecl()) {
             return true;
         }
         return false;
