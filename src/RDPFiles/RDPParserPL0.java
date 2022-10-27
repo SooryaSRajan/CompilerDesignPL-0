@@ -1,17 +1,13 @@
 package RDPFiles;
 
 import GeneratedOutput.LexarLexer;
-import org.antlr.v4.runtime.ANTLRFileStream;
-import org.antlr.v4.runtime.CharStream;
-import org.antlr.v4.runtime.CommonTokenStream;
-
-import java.io.IOException;
+import org.antlr.v4.runtime.Token;
 
 public class RDPParserPL0 {
+    LexarLexer lexer;
+    Token token;
 
-    CommonTokenStream tokenStream;
-
-    public RDPParserPL0(CommonTokenStream tokenStream) {
-        this.tokenStream = tokenStream;
+    public RDPParserPL0(LexarLexer lexer) {
+        this.lexer = lexer;
     }
 }

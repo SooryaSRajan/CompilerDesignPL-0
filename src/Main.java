@@ -24,13 +24,13 @@ public class Main {
             LexarLexer lexer = new LexarLexer(input);
 
             //Gets tokens for the input file
-            CommonTokenStream token = new CommonTokenStream(lexer);
+//            CommonTokenStream token = new CommonTokenStream(lexer);
 
-            RDPParserPL0 parserPL0 = new RDPParserPL0(token);
+            RDPParserPL0 parserPL0 = new RDPParserPL0(lexer);
 
             //The token stream is parsed with the respective grammars to check for errors
-            LexarParser parser = new LexarParser(token);
-            parser.start();
+//            LexarParser parser = new LexarParser(token);
+//            parser.start();
 
 
         } catch (Exception e) {
