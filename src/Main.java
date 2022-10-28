@@ -14,10 +14,10 @@ public class Main {
             //gets the file as a character stream
             //uncomment the file path as needed
 
-//            CharStream input = new ANTLRFileStream("/Users/adheenababu/IdeaProjects/CompilerDesignPL-0/src/InputFiles/sum");
+            CharStream input = new ANTLRFileStream("/Users/adheenababu/IdeaProjects/CompilerDesignPL-0/src/InputFiles/sum");
 //            CharStream input = new ANTLRFileStream("/Users/adheenababu/IdeaProjects/CompilerDesignPL-0/src/InputFiles/multiplication");
 //            CharStream input = new ANTLRFileStream("/Users/adheenababu/IdeaProjects/CompilerDesignPL-0/src/InputFiles/odd_numbers");
-            CharStream input = new ANTLRFileStream("/Users/adheenababu/IdeaProjects/CompilerDesignPL-0/src/InputFiles/fibonacci");
+//            CharStream input = new ANTLRFileStream("/Users/adheenababu/IdeaProjects/CompilerDesignPL-0/src/InputFiles/fibonacci");
 //            CharStream input = new ANTLRFileStream("//Users/adheenababu/IdeaProjects/CompilerDesignPL-0/src/InputFiles/stack");
 
             //generates a lexer output for the input code
