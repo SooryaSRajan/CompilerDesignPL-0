@@ -1,5 +1,5 @@
 package GeneratedOutput;// Generated from /Users/sooryasrajan/AntlrCompilerDesign/src/Lexar.g4 by ANTLR 4.10.1
-import org.antlr.v4.runtime.tree.ParseTreeListener;
+ import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**
  * This interface defines a complete listener for a parse tree produced by
@@ -67,6 +67,16 @@ public interface LexarListener extends ParseTreeListener {
 	 */
 	void exitConstDecl(LexarParser.ConstDeclContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link LexarParser#constDeclItemInner}.
+	 * @param ctx the parse tree
+	 */
+	void enterConstDeclItemInner(LexarParser.ConstDeclItemInnerContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link LexarParser#constDeclItemInner}.
+	 * @param ctx the parse tree
+	 */
+	void exitConstDeclItemInner(LexarParser.ConstDeclItemInnerContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link LexarParser#constDeclItem}.
 	 * @param ctx the parse tree
 	 */
@@ -97,6 +107,16 @@ public interface LexarListener extends ParseTreeListener {
 	 */
 	void exitVarDecl(LexarParser.VarDeclContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link LexarParser#varDeclItemInner}.
+	 * @param ctx the parse tree
+	 */
+	void enterVarDeclItemInner(LexarParser.VarDeclItemInnerContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link LexarParser#varDeclItemInner}.
+	 * @param ctx the parse tree
+	 */
+	void exitVarDeclItemInner(LexarParser.VarDeclItemInnerContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link LexarParser#varDeclItem}.
 	 * @param ctx the parse tree
 	 */
@@ -116,6 +136,36 @@ public interface LexarListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitProcDecl(LexarParser.ProcDeclContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link LexarParser#colonTypeChoice}.
+	 * @param ctx the parse tree
+	 */
+	void enterColonTypeChoice(LexarParser.ColonTypeChoiceContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link LexarParser#colonTypeChoice}.
+	 * @param ctx the parse tree
+	 */
+	void exitColonTypeChoice(LexarParser.ColonTypeChoiceContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link LexarParser#procFormalCallChoice}.
+	 * @param ctx the parse tree
+	 */
+	void enterProcFormalCallChoice(LexarParser.ProcFormalCallChoiceContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link LexarParser#procFormalCallChoice}.
+	 * @param ctx the parse tree
+	 */
+	void exitProcFormalCallChoice(LexarParser.ProcFormalCallChoiceContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link LexarParser#formalDeclInnerRepeat}.
+	 * @param ctx the parse tree
+	 */
+	void enterFormalDeclInnerRepeat(LexarParser.FormalDeclInnerRepeatContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link LexarParser#formalDeclInnerRepeat}.
+	 * @param ctx the parse tree
+	 */
+	void exitFormalDeclInnerRepeat(LexarParser.FormalDeclInnerRepeatContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link LexarParser#formalDecl}.
 	 * @param ctx the parse tree
@@ -147,6 +197,16 @@ public interface LexarListener extends ParseTreeListener {
 	 */
 	void exitStmtList(LexarParser.StmtListContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link LexarParser#stmtListStmtInner}.
+	 * @param ctx the parse tree
+	 */
+	void enterStmtListStmtInner(LexarParser.StmtListStmtInnerContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link LexarParser#stmtListStmtInner}.
+	 * @param ctx the parse tree
+	 */
+	void exitStmtListStmtInner(LexarParser.StmtListStmtInnerContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link LexarParser#stmt}.
 	 * @param ctx the parse tree
 	 */
@@ -166,6 +226,16 @@ public interface LexarListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitCallStmt(LexarParser.CallStmtContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link LexarParser#exprInner}.
+	 * @param ctx the parse tree
+	 */
+	void enterExprInner(LexarParser.ExprInnerContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link LexarParser#exprInner}.
+	 * @param ctx the parse tree
+	 */
+	void exitExprInner(LexarParser.ExprInnerContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link LexarParser#assignStmt}.
 	 * @param ctx the parse tree
@@ -187,6 +257,16 @@ public interface LexarListener extends ParseTreeListener {
 	 */
 	void exitLvalue(LexarParser.LvalueContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link LexarParser#lvalueInner}.
+	 * @param ctx the parse tree
+	 */
+	void enterLvalueInner(LexarParser.LvalueInnerContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link LexarParser#lvalueInner}.
+	 * @param ctx the parse tree
+	 */
+	void exitLvalueInner(LexarParser.LvalueInnerContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link LexarParser#returnStmt}.
 	 * @param ctx the parse tree
 	 */
@@ -196,6 +276,16 @@ public interface LexarListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitReturnStmt(LexarParser.ReturnStmtContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link LexarParser#sumCallInner}.
+	 * @param ctx the parse tree
+	 */
+	void enterSumCallInner(LexarParser.SumCallInnerContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link LexarParser#sumCallInner}.
+	 * @param ctx the parse tree
+	 */
+	void exitSumCallInner(LexarParser.SumCallInnerContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link LexarParser#outStmt}.
 	 * @param ctx the parse tree
@@ -207,6 +297,16 @@ public interface LexarListener extends ParseTreeListener {
 	 */
 	void exitOutStmt(LexarParser.OutStmtContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link LexarParser#outStmtInner}.
+	 * @param ctx the parse tree
+	 */
+	void enterOutStmtInner(LexarParser.OutStmtInnerContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link LexarParser#outStmtInner}.
+	 * @param ctx the parse tree
+	 */
+	void exitOutStmtInner(LexarParser.OutStmtInnerContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link LexarParser#ifStmt}.
 	 * @param ctx the parse tree
 	 */
@@ -216,6 +316,16 @@ public interface LexarListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitIfStmt(LexarParser.IfStmtContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link LexarParser#ifStmtInner}.
+	 * @param ctx the parse tree
+	 */
+	void enterIfStmtInner(LexarParser.IfStmtInnerContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link LexarParser#ifStmtInner}.
+	 * @param ctx the parse tree
+	 */
+	void exitIfStmtInner(LexarParser.IfStmtInnerContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link LexarParser#whileStmt}.
 	 * @param ctx the parse tree
@@ -247,6 +357,16 @@ public interface LexarListener extends ParseTreeListener {
 	 */
 	void exitCondition(LexarParser.ConditionContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link LexarParser#conditionInner}.
+	 * @param ctx the parse tree
+	 */
+	void enterConditionInner(LexarParser.ConditionInnerContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link LexarParser#conditionInner}.
+	 * @param ctx the parse tree
+	 */
+	void exitConditionInner(LexarParser.ConditionInnerContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link LexarParser#innerStatement}.
 	 * @param ctx the parse tree
 	 */
@@ -277,6 +397,16 @@ public interface LexarListener extends ParseTreeListener {
 	 */
 	void exitExprs(LexarParser.ExprsContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link LexarParser#exprsInner}.
+	 * @param ctx the parse tree
+	 */
+	void enterExprsInner(LexarParser.ExprsInnerContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link LexarParser#exprsInner}.
+	 * @param ctx the parse tree
+	 */
+	void exitExprsInner(LexarParser.ExprsInnerContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link LexarParser#expr}.
 	 * @param ctx the parse tree
 	 */
@@ -297,6 +427,16 @@ public interface LexarListener extends ParseTreeListener {
 	 */
 	void exitSum(LexarParser.SumContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link LexarParser#sumInner}.
+	 * @param ctx the parse tree
+	 */
+	void enterSumInner(LexarParser.SumInnerContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link LexarParser#sumInner}.
+	 * @param ctx the parse tree
+	 */
+	void exitSumInner(LexarParser.SumInnerContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link LexarParser#term}.
 	 * @param ctx the parse tree
 	 */
@@ -306,6 +446,16 @@ public interface LexarListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitTerm(LexarParser.TermContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link LexarParser#termMultDivFactor}.
+	 * @param ctx the parse tree
+	 */
+	void enterTermMultDivFactor(LexarParser.TermMultDivFactorContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link LexarParser#termMultDivFactor}.
+	 * @param ctx the parse tree
+	 */
+	void exitTermMultDivFactor(LexarParser.TermMultDivFactorContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link LexarParser#factor}.
 	 * @param ctx the parse tree
