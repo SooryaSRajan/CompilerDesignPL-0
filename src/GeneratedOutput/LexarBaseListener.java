@@ -87,6 +87,18 @@ public class LexarBaseListener implements LexarListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterConstDeclItemInner(LexarParser.ConstDeclItemInnerContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitConstDeclItemInner(LexarParser.ConstDeclItemInnerContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterConstDeclItem(LexarParser.ConstDeclItemContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -123,6 +135,18 @@ public class LexarBaseListener implements LexarListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterVarDeclItemInner(LexarParser.VarDeclItemInnerContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitVarDeclItemInner(LexarParser.VarDeclItemInnerContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterVarDeclItem(LexarParser.VarDeclItemContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -142,6 +166,42 @@ public class LexarBaseListener implements LexarListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitProcDecl(LexarParser.ProcDeclContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterColonTypeChoice(LexarParser.ColonTypeChoiceContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitColonTypeChoice(LexarParser.ColonTypeChoiceContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterProcFormalCallChoice(LexarParser.ProcFormalCallChoiceContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitProcFormalCallChoice(LexarParser.ProcFormalCallChoiceContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterFormalDeclInnerRepeat(LexarParser.FormalDeclInnerRepeatContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitFormalDeclInnerRepeat(LexarParser.FormalDeclInnerRepeatContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -183,6 +243,18 @@ public class LexarBaseListener implements LexarListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterStmtListStmtInner(LexarParser.StmtListStmtInnerContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitStmtListStmtInner(LexarParser.StmtListStmtInnerContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterStmt(LexarParser.StmtContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -202,6 +274,18 @@ public class LexarBaseListener implements LexarListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitCallStmt(LexarParser.CallStmtContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterExprInner(LexarParser.ExprInnerContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitExprInner(LexarParser.ExprInnerContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -231,6 +315,18 @@ public class LexarBaseListener implements LexarListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterLvalueInner(LexarParser.LvalueInnerContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitLvalueInner(LexarParser.LvalueInnerContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterReturnStmt(LexarParser.ReturnStmtContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -238,6 +334,18 @@ public class LexarBaseListener implements LexarListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitReturnStmt(LexarParser.ReturnStmtContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterSumCallInner(LexarParser.SumCallInnerContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitSumCallInner(LexarParser.SumCallInnerContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -255,6 +363,18 @@ public class LexarBaseListener implements LexarListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterOutStmtInner(LexarParser.OutStmtInnerContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitOutStmtInner(LexarParser.OutStmtInnerContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterIfStmt(LexarParser.IfStmtContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -262,6 +382,18 @@ public class LexarBaseListener implements LexarListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitIfStmt(LexarParser.IfStmtContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterIfStmtInner(LexarParser.IfStmtInnerContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitIfStmtInner(LexarParser.IfStmtInnerContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -303,6 +435,18 @@ public class LexarBaseListener implements LexarListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterConditionInner(LexarParser.ConditionInnerContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitConditionInner(LexarParser.ConditionInnerContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterInnerStatement(LexarParser.InnerStatementContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -339,6 +483,18 @@ public class LexarBaseListener implements LexarListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterExprsInner(LexarParser.ExprsInnerContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitExprsInner(LexarParser.ExprsInnerContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterExpr(LexarParser.ExprContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -363,6 +519,18 @@ public class LexarBaseListener implements LexarListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterSumInner(LexarParser.SumInnerContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitSumInner(LexarParser.SumInnerContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterTerm(LexarParser.TermContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -370,6 +538,18 @@ public class LexarBaseListener implements LexarListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitTerm(LexarParser.TermContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterTermMultDivFactor(LexarParser.TermMultDivFactorContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitTermMultDivFactor(LexarParser.TermMultDivFactorContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
